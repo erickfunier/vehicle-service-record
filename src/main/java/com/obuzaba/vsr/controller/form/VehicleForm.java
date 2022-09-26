@@ -19,9 +19,6 @@ public class VehicleForm {
 	
 	@NotNull @NotEmpty
 	private String model;
-	
-	@NotNull @NotEmpty
-	private int year;
 
 	public void setName(String name) {
 		this.name = name;
