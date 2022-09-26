@@ -4,14 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 public class Vehicle {
@@ -26,7 +19,7 @@ public class Vehicle {
 	private Model model;
 	@ManyToOne
 	private Make make;
-	@OneToMany(mappedBy = "vehicle")
+	@OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
 	private List<Service> services = new ArrayList<>();
 	
 	public Vehicle() {
