@@ -12,7 +12,6 @@ public class Model {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private int year;
 	@ManyToOne
 	private Make make;
 
@@ -34,11 +33,8 @@ public class Model {
 			return false;
 		Model other = (Model) obj;
 		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
+			return other.id == null;
+		} else return id.equals(other.id);
 	}
 
 	public Long getId() {
@@ -55,14 +51,6 @@ public class Model {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public int getYear() {
-		return year;
-	}
-
-	public void setYear(int year) {
-		this.year = year;
 	}
 
 	public Make getMake() {

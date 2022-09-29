@@ -10,19 +10,21 @@ import com.obuzaba.vsr.domain.Vehicle;
 
 public class VehicleDetailsDto {
 
-	private Long id;
-	private String name;
-	private String make;
-	private String model;
-	private LocalDateTime createdDate;
-	private StatusVehicle status;
-	private List<ServiceDto> services;
+	private final Long id;
+	private final String name;
+	private final String make;
+	private final String model;
+	private final int year;
+	private final LocalDateTime createdDate;
+	private final StatusVehicle status;
+	private final List<ServiceDto> services;
 	
 	public VehicleDetailsDto(Vehicle vehicle) {
 		this.id = vehicle.getId();
 		this.name = vehicle.getName();
 		this.make = vehicle.getMake().getName();
 		this.model = vehicle.getModel().getName();
+		this.year = vehicle.getYear();
 		this.createdDate = vehicle.getCreatedDate();
 		this.status = vehicle.getStatus();
 		
@@ -40,6 +42,10 @@ public class VehicleDetailsDto {
 
 	public String getMake() {
 		return make;
+	}
+
+	public int getYear() {
+		return year;
 	}
 
 	public LocalDateTime getCreatedDate() {

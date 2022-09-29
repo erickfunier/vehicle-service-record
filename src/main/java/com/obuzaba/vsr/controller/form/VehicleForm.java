@@ -20,6 +20,9 @@ public class VehicleForm {
 	@NotNull @NotEmpty
 	private String model;
 
+	@NotNull
+	private int year;
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -32,10 +35,14 @@ public class VehicleForm {
 		this.model = model;
 	}
 
+	public void setYear(int year) {
+		this.year = year;
+	}
+
 	public Vehicle converter(MakeRepository makeRepository, ModelRepository modelRepository) {
 		Make make = makeRepository.findByName(this.make);
-		Model model = modelRepository.findByNameAndMake(this.model, make.getName());
-		return new Vehicle(name, make, model);
+		Model model = modelRepository.findByNameAndMakeId(this.model, make.getId());
+		return new Vehicle(name, make, model, this.year);
 	}
 
 }

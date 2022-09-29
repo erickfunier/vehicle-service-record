@@ -36,6 +36,10 @@ public class UpdateVehicleForm {
 		this.model = model;
 	}
 
+	public void setYear(int year) {
+		this.year = year;
+	}
+
 	public Vehicle update(Long id, VehicleRepository vehicleRepository, MakeRepository makeRepository, ModelRepository modelRepository) {
 		Vehicle vehicle = vehicleRepository.getOne(id);
 		
@@ -44,7 +48,7 @@ public class UpdateVehicleForm {
 		Make make = makeRepository.findByName(this.make);
 		vehicle.setMake(make);
 		
-		Model model = modelRepository.findByNameAndMake(this.model, make.getName());
+		Model model = modelRepository.findByNameAndMakeId(this.model, make.getId());
 		vehicle.setModel(model);
 		
 		return vehicle;

@@ -21,14 +21,25 @@ public class Vehicle {
 	private Make make;
 	@OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
 	private List<Service> services = new ArrayList<>();
-	
+
+	private int year;
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
 	public Vehicle() {
 	}
 	
-	public Vehicle(String name, Make make, Model model) {
+	public Vehicle(String name, Make make, Model model, int year) {
 		this.name = name;
 		this.make = make;
 		this.model = model;
+		this.year = year;
 	}
 
 	@Override
@@ -49,11 +60,8 @@ public class Vehicle {
 			return false;
 		Vehicle other = (Vehicle) obj;
 		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
+			return other.id == null;
+		} else return id.equals(other.id);
 	}
 
 	public Long getId() {
