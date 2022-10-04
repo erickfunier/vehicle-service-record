@@ -1,4 +1,4 @@
-# vehicle-service-record
+# Vehicle Service Record
  
 [Under Construction]
 
@@ -12,3 +12,8 @@ https://vehicle-service-record.herokuapp.com/swagger-ui.html#/
 
 REST Endpoint to list vehicles https://vehicle-service-record.herokuapp.com/vehicles
 PS. The Heroku App (Free) takes around 20 seconds to start, please wait for the page loading.
+
+REST Diagram for /vehicles GET and POST
+<p align="center">
+  <img width="1000" src="https://user-images.githubusercontent.com/38412804/193730774-4730000d-8fb9-47b8-9265-801d75bdae23.png" alt="Diagram vehicles GET POST">
+</p>
