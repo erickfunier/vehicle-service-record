@@ -68,6 +68,8 @@ public class VehiclesController {
 	public ResponseEntity<VehicleDto> register(@RequestBody @Valid VehicleForm vehicleForm, UriComponentsBuilder uriBuilder) {
 		Vehicle vehicle = vehicleForm.converter(makeRepository, modelRepository);
 		vehicleRepository.save(vehicle);
+
+
 		
 		URI uri = uriBuilder.path("/vehicles/{id}").buildAndExpand(vehicle.getId()).toUri();
 		return ResponseEntity.created(uri).body(new VehicleDto(vehicle));
