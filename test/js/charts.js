@@ -567,13 +567,7 @@ function search(exchange) {
 	//console.log('Start Time: '+tsSTART);
 	//console.log('End Time: '+tsEND);
 
-	var address = '/test/tools/searchcharts.php?'
-					tsstart='+(tsSTART.toString())+'\
-					&tsend='+(tsEND.toString())+'\
-					&db=devmas17_cryptodb\
-					&dbtab='+exchange+'\
-					&tabtime='+exchange+'TIME\
-					&dbparam01='+exchange+'USDT_BTClast';
+	var address = '/test/tools/searchcharts.php?tsstart='+(tsSTART.toString())+'&tsend='+(tsEND.toString())+'&db=devmas17_cryptodb&dbtab='+exchange+'&tabtime='+exchange+'TIME&dbparam01='+exchange+'USDT_BTClast';
 
 	console.log(address);
 
