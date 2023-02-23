@@ -1,0 +1,14 @@
+#page-title {
+    float: left;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 39px;
+}
+
+#alert-count {
+  visibility: hidden;
+}
+
+.menu-footer-item {
+  width: 100%;
+}

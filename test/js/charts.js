@@ -567,7 +567,7 @@ function search(exchange) {
 	//console.log('Start Time: '+tsSTART);
 	//console.log('End Time: '+tsEND);
 
-	var address = '/tools/searchcharts.php?\
+	var address = '/test/tools/searchcharts.php?\
 					tsstart='+(tsSTART.toString())+'\
 					&tsend='+(tsEND.toString())+'\
 					&db=devmas17_cryptodb\
