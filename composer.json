@@ -1,3 +1,7 @@
 {
-  "homepage": "https://vehicle-service-record.herokuapp.com/test/index.html"
+  "scripts": {
+    "post-install-cmd": [
+      "cd test && composer install"
+    ]
+  }
 }
