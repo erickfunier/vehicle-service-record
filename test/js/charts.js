@@ -34,7 +34,7 @@ $(document).ready(function () {
 	
 	
 
-    var event = new EventSource("/synoptics/tools/getdata.php");
+    var event = new EventSource("/test/synoptics/tools/getdata.php");
 
     event.addEventListener('open', function (e) { // A cada HTTP Request
         $("#dbmessage").text("");
